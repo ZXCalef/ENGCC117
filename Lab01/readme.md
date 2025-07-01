@@ -1,3 +1,3 @@
 # Lab 01
 
-![](pic.png)
+![](Lab01.png)
