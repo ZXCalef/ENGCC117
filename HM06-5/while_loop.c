@@ -8,18 +8,13 @@ int main() {
 
     int i = n;
     while (i >= 2) {
-        int isPrime = 1;
         int j = 2;
 
-        while (j < i) {
-            if (i % j == 0) {
-                isPrime = 0;
-                break;
-            }
+        while (j < i && i % j != 0) {
             j++;
         }
 
-        if (isPrime) {
+        if (j == i) {
             printf("%d ", i);
         }
 
