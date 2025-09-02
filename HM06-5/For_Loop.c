@@ -1,23 +1,23 @@
 #include <stdio.h>
 
 int main() {
-    int num, i, j, isPrime;
+    int n, i, j ;
 
-    printf("Enter number: ");
-    scanf("%d", &num);
+    printf( "Enter number: " ) ;
+    scanf( "%d", &n) ;
 
-    for (i = num; i >= 2; i--) {
-        isPrime = 1;
-        for (j = 2; j < i; j++) {
-            if (i % j == 0) {
-                isPrime = 0;
+    for ( i = n; i >= 2; i-- ) {
+        for ( j = 2; j < i; j++ ) {
+            if ( i % j == 0 ) {
+
+                j = i;
             }
         }
-        if (isPrime) {
-            printf("%d ", i);
+        if ( j == i ) {
+            printf( "%d ", i ) ;
         }
     }
 
-    printf("\n");
+    printf( "\n" ) ;
     return 0;
 }

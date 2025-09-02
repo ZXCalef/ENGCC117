@@ -1,25 +1,27 @@
-#include <stdio.h>#include <stdio.h>
+#include <stdio.h>
 
 int main() {
-    int n;
-    printf("Enter number: ");
-    scanf("%d", &n);
+    int n, i, j ;
 
-    int i = n;
+    printf( "Enter number: " ) ;
+    scanf( "%d", &n) ;
+
+    i = n ;
     do {
-        int j = 2;
-
+        j = 2 ;
         do {
-            j++;
-        } while (j < i && i % (j - 1) != 0);
+            if ( i % j == 0 ) {
+                break ;
+            }
+            j++ ;
+        } while (j < i) ;
 
-        if (j == i) {
-            printf("%d ", i);
+        if ( j == i ) {
+            printf( "%d ", i ) ;
         }
+        i-- ;
+    } while ( i >= 2 ) ;
 
-        i--;
-    } while (i >= 2);
-
-    printf("\n");
-    return 0;
+    printf( "\n" ) ;
+    return 0 ;
 }
