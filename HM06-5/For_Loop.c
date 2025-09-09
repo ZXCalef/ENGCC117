@@ -6,22 +6,18 @@ int main() {
     printf( "Enter number: " ) ;
     scanf( "%d", &n) ;
 
-    i = n ;
-    while ( i >= 2 ) {
-        j = 2 ;
-        while ( j < i ) {
+    for ( i = n; i >= 2; i-- ) {
+        for ( j = 2; j < i; j++ ) {
             if ( i % j == 0 ) {
-                break ;
-            }
-            j++ ;
-        }
 
-        if ( j == i ) {
-            printf( "%d ", i) ;
+                j = i;
+            }
         }
-        i-- ;
+        if ( j == i ) {
+            printf( "%d ", i ) ;
+        }
     }
 
     printf( "\n" ) ;
-    return 0 ;
+    return 0;
 }

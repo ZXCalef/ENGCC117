@@ -1,12 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    int n;
-    printf("Enter number : ");
-    scanf("%d", &n);
+    int n, i, j ;
 
-    int i = n;
+    printf( "Enter number: " ) ;
+    scanf( "%d", &n) ;
+
+    i = n ;
     do {
+<<<<<<< HEAD
         int j = 2;
 
         do {
@@ -15,10 +17,22 @@ int main() {
 
         if (j == i) {
             printf("%d ", i);
+=======
+        j = 2 ;
+        do {
+            if ( i % j == 0 ) {
+                break ;
+            }
+            j++ ;
+        } while (j < i) ;
+
+        if ( j == i ) {
+            printf( "%d ", i ) ;
+>>>>>>> 15e934cc92e079f7e07d5749335fb9e7aad935a2
         }
+        i-- ;
+    } while ( i >= 2 ) ;
 
-        i--;
-    } while (i >= 2);
-
-    return 0;
+    printf( "\n" ) ;
+    return 0 ;
 }
