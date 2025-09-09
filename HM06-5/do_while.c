@@ -7,18 +7,13 @@ int main() {
 
     int i = n;
     do {
-        int isPrime = 1;
-        int j = 2; 
+        int j = 2;
 
         do {
-            if (i % j == 0 && j != i) {
-                isPrime = 0;
-                break;
-            }
             j++;
-        } while (j < i);
+        } while (j < i && i % (j - 1) != 0);
 
-        if (isPrime && i >= 2) {
+        if (j == i) {
             printf("%d ", i);
         }
 
