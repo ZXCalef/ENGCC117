@@ -11,7 +11,7 @@ int main() {
         j = 2 ;
         while ( j < i ) {
             if ( i % j == 0 ) {
-                break ;
+                break ;         //break ทำให้ loop ตรวจตัวหารหยุดทันทีเมื่อเจอเลขที่หารลงตัว
             }
             j++ ;
         }
