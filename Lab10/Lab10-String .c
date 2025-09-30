@@ -1,26 +1,30 @@
 #include <stdio.h>
 
-char to_lowercase( char c ) {
-    if ( c >= 'A' && c <= 'Z' ) {
+char to_lowercase( char c ) { //ถ้า c เป็นตัวพิมพ์ใหญ่ (A–Z) → แปลงเป็นตัวเล็กโดยบวก 32 (ASCII ของ 'a' – 'A' = 32)
+    if ( c >= 'A' && c <= 'Z' ) { //ถ้าไม่ใช่ตัวพิมพ์ใหญ่ → คืนค่าเดิม
         return c + 32 ;
     }
     return c ;
 }
 
-int main( void ) {
-    char word[ 100 ] ;
-    int len = 0, i, j ;
+///////////////////////////////////////////////////////////////////////////////////
 
-    printf(" Enter word:\n" ) ;
+int main( void ) {
+    char word[ 100 ] ; //ประกาศอาร์เรย์ word[100] เก็บคำที่ผู้ใช้กรอก
+    int len = 0, i, j ; //ใช้วนลูปตรวจสอบตัวอักษร
+
+    printf(" Enter word:\n" ) ; //รับคำจากผู้ใช้ (ไม่เว้นวรรค)
     scanf( "%s" , word ) ;
 
-    while ( word[ len ] != '\0' ) {
+    while ( word[ len ] != '\0' ) { //หาความยาวของคำ (len) โดยนับจนถึงตัวอักษร \0
         len++ ;
     }
 
-    for ( i = 0 , j = len - 1 ; i < j ; i++, j-- ) {
-        if ( to_lowercase ( word[ i ] ) != to_lowercase ( word[ j ] ) ) {
-            printf( "Not Pass.\n" ) ;
+    ///////////////////////////////////////////////////////////////////////////////////
+
+    for ( i = 0 , j = len - 1 ; i < j ; i++, j-- ) { //i เริ่มจากหน้า j เริ่มจากหลัง
+        if ( to_lowercase ( word[ i ] ) != to_lowercase ( word[ j ] ) ) { //เปรียบเทียบตัวอักษรคู่หน้า–หลัง หลังแปลงเป็นตัวเล็ก
+            printf( "Not Pass.\n" ) ; //ถ้าไม่เท่ากัน → แสดง "Not Pass." และจบโปรแกรม
             return 0 ;
         }
     }

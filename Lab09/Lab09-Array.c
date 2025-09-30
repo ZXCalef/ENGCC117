@@ -1,39 +1,40 @@
 #include <stdio.h>
-#include <stdbool.h>
 
 int main() {
     int N ;
     printf( "Enter N :\n" ) ;
-    scanf( "%d" , &N ) ;
+    scanf( "%d" , &N ) ; //รับจำนวน ขนาดของอาร์เรย์ N จากผู้ใช้
 
     int arr[ N ] ;
-    for ( int i = 0; i < N; i++ ) {
-        printf( "Enter value[%d] :\n", i ) ;
-        scanf( "%d" , &arr[i] ) ;
+    for ( int i = 0 ; i < N ; i++ ) { //ใช้ for วนลูปเพื่อรับค่าตัวเลขแต่ละตัวจากผู้ใช้
+        printf( "Enter value[%d] :\n" , i) ; //เก็บแต่ละตัวใน arr[i]
+        scanf( "%d", &arr[ i ] ) ;
     }
-
-    printf( "Index:" ) ;
+//////////////////////////////////////////////////////////////////////////////////////////////
+    printf( "Index:" ) ; // (Index) ของอาร์เรย์ จาก 0 ถึง N-1
     for ( int i = 0 ; i < N ; i++ ) {
-        printf( " %d" , i ) ;
+        printf( " %d", i ) ;
     }
     printf( "\n" ) ;
-
-    printf( "Array:" ) ;
+//////////////////////////////////////////////////////////////////////////////////////////////
+    printf( "Array:" ) ; //วนลูป ตรวจสอบตัวเลขแต่ละตัวในอาร์เรย์ว่าเป็นจำนวนเฉพาะหรือไม่
     for ( int i = 0 ; i < N ; i++ ) {
-        bool prime = true ;
-        if ( arr[ i ] < 2 ) prime = false ;
+        int prime = 1 ; //กำหนดตัวแปร prime = 1 (สมมติว่าเป็นจำนวนเฉพาะ)
+        if ( arr[ i ] < 2 ) prime = 0 ; //ถ้าตัวเลข < 2 → ไม่ใช่จำนวนเฉพาะ → prime = 0
         else {
-            for ( int j = 2; j * j <= arr[ i ] ; j++ ) {
-                if ( arr[ i ] % j == 0 ) {
-                    prime = false ;
+            for ( int j = 2; j * j <= arr[ i ] ; j++ ) { //ลูป j = 2 ถึง sqrt(arr[i]) เพื่อเช็คว่า หารลงตัวหรือไม่
+                if ( arr[ i ] % j == 0 ) { //ถ้า arr[i] % j == 0 → ไม่ใช่จำนวนเฉพาะ → prime = 0 และออกจากลูป
+                    prime = 0 ;
                     break ;
                 }
             }
         }
-        if ( prime ) printf( " %d" , arr[ i ] ) ;
-        else printf( " #" ) ;
+//////////////////////////////////////////////////////////////////////////////////////////////
+        if ( prime ) printf( " %d", arr[ i ] ) ;
+        else printf( " #" ) ; //ถ้าไม่ใช่ → พิมพ์เครื่องหมาย # แทน
     }
     printf( "\n" ) ;
-
-    return 0 ;
+    
+   return 0 ;
 }
+

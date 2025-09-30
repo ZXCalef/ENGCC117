@@ -21,7 +21,7 @@ int main() {
         j = 2 ;
         do {
             if ( i % j == 0 ) {
-                break ;
+                break ;         //break ทำให้ loop ตรวจตัวหารหยุดทันทีเมื่อเจอเลขที่หารลงตัว
             }
             j++ ;
         } while (j < i) ;
