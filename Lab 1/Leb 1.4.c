@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int GetSet(int **arr);  // แก้ prototype ให้ถูกต้อง
+int GetSet(int **arr);
 
 int GetSet(int **arr) {
     int n;
@@ -27,7 +27,7 @@ int GetSet(int **arr) {
 
 int main() {
     int *data, num;
-    num = GetSet(&data);  // ส่ง address ของ pointer
+    num = GetSet(&data);
     
     printf("\nYou entered %d members:\n", num);
     for (int i = 0; i < num; i++) {
