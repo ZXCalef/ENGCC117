@@ -7,17 +7,13 @@ int main() {
     char text[50];
     char out[50];
     
-    // รับข้อมูลจากผู้ใช้
     printf("Enter text: ");
     fgets(text, sizeof(text), stdin);
     
-    // ลบ newline (\n) ที่ติดมาจาก fgets
     text[strcspn(text, "\n")] = '\0';
     
-    // เรียกใช้ฟังก์ชัน reverse
     reverse(text, out);
     
-    // แสดงผลลัพธ์
     printf("\nInput: %s\n", text);
     printf("Output: %s\n", out);
     
