@@ -10,7 +10,6 @@ int main() {
     printf("Enter string: ");
     fgets(text, 50, stdin);
     
-    // ลบ newline ที่ติดมาจาก fgets
     int len = strlen(text);
     if (len > 0 && text[len-1] == '\n') {
         text[len-1] = '\0';
