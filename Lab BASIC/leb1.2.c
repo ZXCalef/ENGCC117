@@ -9,11 +9,11 @@ int main() {
 
     if (score >= 80) {
         printf("Grade A");
-    } else if (score >= 70 && score <= 79) {  // ตามตัวอักษรต้องมีขอบเขตบน
+    } else if (score >= 70 && score <= 79) {
         printf("Grade B");
-    } else if (score >= 60 && score <= 69) {  // ตามตัวอักษรต้องมีขอบเขตบน
+    } else if (score >= 60 && score <= 69) {
         printf("Grade C");
-    } else if (score >= 50 && score <= 59) {  // ตามตัวอักษรต้องมีขอบเขตบน
+    } else if (score >= 50 && score <= 59) {
         printf("Grade D");
     } else {
         printf("Grade F");
