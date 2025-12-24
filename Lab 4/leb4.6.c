@@ -20,6 +20,7 @@ int main() {
     SaveNode(start, "one", 6, 'M', 3.11);
     
     start->next = (struct studentNode*)malloc(sizeof(struct studentNode));
+    SaveNode(start->next, "two", 8, 'F', 3.22);
     
     start->next->next = (struct studentNode*)malloc(sizeof(struct studentNode));
     SaveNode(start->next->next, "three", 10, 'M', 3.33);
