@@ -9,15 +9,27 @@ int main() {
         return 1;
     }
     
-    while (number != 0) {
+    if (number != 0) {
         if (number % 2 == 0) {
-            evenSum += number;  // คู่
+            evenSum += number;
         } else {
-            oddSum += number;   // คี่
+            oddSum += number;
+        }
+    }
+    
+    while (1) {
+        if (scanf("%d", &number) != 1) {
+            return 1;
         }
         
-        if (scanf("%d", &number) != 1) {
+        if (number == 0) {
             break;
+        }
+        
+        if (number % 2 == 0) {
+            evenSum += number;
+        } else {
+            oddSum += number;
         }
     }
     
