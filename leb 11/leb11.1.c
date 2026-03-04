@@ -9,28 +9,28 @@ int BinSearch(int data[], int n, int find) {
         mid = (low + high) / 2;
         
         if (data[mid] == find) {
-            return mid;  // พบข้อมูล คืนค่าตำแหน่ง
+            return mid;
         }
         else if (data[mid] < find) {
-            low = mid + 1;  // ค้นหาทางขวา
+            low = mid + 1;
         }
         else {
-            high = mid - 1;  // ค้นหาทางซ้าย
+            high = mid - 1;
         }
     }
     
-    return -1;  // ไม่พบข้อมูล
+    return -1;
 }
 
 int main() {
     int data[6] = {1, 2, 3, 4, 5, 7};
-    int n = 6;  // ต้องกำหนดค่า n ให้ถูกต้อง
+    int n = 6;
     int find = 5;
     
     int pos = BinSearch(data, n, find);
     
     if (pos != -1) {
-        printf("Found %d at %d\n", find, pos);
+        printf("Found %d at position %d\n", find, pos);
     } else {
         printf("Not found\n");
     }
